@@ -1,0 +1,2 @@
+# NYTReact
+This is a React-based rendition of the New York Times Article Search application
