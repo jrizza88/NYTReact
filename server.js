@@ -21,7 +21,45 @@ app.use(express.static('./public'));
 
 // -------------------------------------------------
 
+mongoose.connect('mongodb://heroku_pk3s7hwl:m47a5pmislhugh24b10vgj9ptd@ds049456.mlab.com:49456/heroku_pk3s7hwl');
 
+var db = mongoose.connection;
+
+db.on('error', function(err){
+  console.log("Mongoose error", err);
+});
+
+db.once('open', function(){
+  console.log('Mongoose connection successful! ');
+})
+
+// use Morgan and bodyparser with the app
+app.use(logger('dev'));
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
+
+//Routes 
+app.get('/', function(req, res){
+  res.sendFile('public/index.html')
+});
+
+// Route to the saved articles
+app.get('/api/saved', function(req, res){
+
+  
+
+});
+
+// Route to add article to the saved list
+app.post('/api/saved', function(req, res){
+
+});
+
+// Route to delete an article from the saved list
+app.delete('/api/saved', function(req, res){
+
+});
 
 app.listen(PORT, function() {
   console.log("App listening on PORT: " + PORT);
