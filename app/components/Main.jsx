@@ -30,7 +30,7 @@ var Main = React.createClass({
               <div className="collapse navbar-ex1-collapse navbar-ex1-collapse">
                 <ul className="nav navbar-nav navbar-right">
                   <li><a href="#/search">Search</a></li> 
-                  <li><a href="#/saved">Saved Artciles</a></li>
+                  <li><a href="#/saved">Saved Articles</a></li>
                 </ul>
               </div>
             </div>

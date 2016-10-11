@@ -40,26 +40,8 @@ app.use(bodyParser.urlencoded({
 }));
 
 //Routes 
-app.get('/', function(req, res){
-  res.sendFile('public/index.html')
-});
+require('./app/routing/routes.js')(app);
 
-// Route to the saved articles
-app.get('/api/saved', function(req, res){
-
-  
-
-});
-
-// Route to add article to the saved list
-app.post('/api/saved', function(req, res){
-
-});
-
-// Route to delete an article from the saved list
-app.delete('/api/saved', function(req, res){
-
-});
 
 app.listen(PORT, function() {
   console.log("App listening on PORT: " + PORT);
